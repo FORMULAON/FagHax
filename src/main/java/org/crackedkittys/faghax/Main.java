@@ -5,7 +5,7 @@ import net.minecraft.client.MinecraftClient;
 import org.lwjgl.*;
 
 import static org.lwjgl.glfw.GLFW.*;
-
+//
 public class Main implements ModInitializer {
 
     public void keyInput(){

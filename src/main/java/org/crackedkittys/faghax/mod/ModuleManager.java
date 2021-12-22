@@ -16,7 +16,7 @@ public class ModuleManager {
         mods.add(new CrystalAura());
         mods.add(new BedAura());
 
-        // RENDER
+        // RENDERl
         mods.add(new Xray());
     }
 }
