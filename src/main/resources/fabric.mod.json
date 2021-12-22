@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "fag",
+  "version": "${version}",
+  "name": "FagHax",
+  "description": "A 1.16.5 Client for faggots galore",
+  "authors": [
+    "KRYMZ0N",
+    "Scriptyure"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.crackedkittys.faghax.Main"
+    ]
+  },
+  "mixins": [
+    "FagHax.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
+}
