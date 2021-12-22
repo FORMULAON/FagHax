@@ -13,7 +13,7 @@ public class Main implements ModInitializer {
 
         glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
             if ( key == GLFW_KEY_ESCAPE && action == GLFW_RELEASE )
-                glfwSetWindowShouldClose(window, true); // We will detect this in the rendering loop
+                glfwSetWindowShouldClose(window, true); // We will detect this n the rendering loop
         });
     }
 
