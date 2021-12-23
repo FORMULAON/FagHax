@@ -1,4 +1,4 @@
 package org.crackedkittys.faghax.mod.movement;
 
-public class Fly {
+public class Fly {//
 }

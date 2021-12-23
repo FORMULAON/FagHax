@@ -1,14 +1,26 @@
 package org.crackedkittys.faghax;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.util.InputUtil;
+import net.minecraft.text.LiteralText;
+import org.crackedkittys.faghax.ui.ClickGui;
 import org.lwjgl.*;
+import org.lwjgl.glfw.GLFW;
 
 import static org.lwjgl.glfw.GLFW.*;
 
-public class Main implements ModInitializer {
 
-    public void keyInput(){
+
+public class Main implements ModInitializer {
+    public static KeyBinding keyBinding;
+    protected static final MinecraftClient mc = MinecraftClient.getInstance();
+
+   /* public void keyInput(){
         long window = MinecraftClient.getInstance().getWindow().getHandle();
 
         glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {
@@ -16,26 +28,22 @@ public class Main implements ModInitializer {
                 glfwSetWindowShouldClose(window, true); // We will detect this n the rendering loop
         });
     }
-
+    */
     @Override
     public void onInitialize() {
-        for (int i=32; i < keys.length; i++) {
-            if (keys[i] != (GLFW.glfwGetKey(MinecraftClient.getInstance().getWindow().getHandle(), i) == GLFW.GLFW_PRESS)) {
-                keys[i] = !keys[i];
-                if (keys[i]) {
-                    if (i == ClickGUIModule.keybind.getKey()) {
-                        if (Utils.isWrongScreen()) {
-                            MinecraftClient mc = MinecraftClient.getInstance();
-                            if (mc != null) {
-                                gui.enterGUI();
-                            }
-                        }
-                    }
+        keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                "key.example.test",
+                InputUtil.Type.KEYSYM,
+                org.lwjgl.glfw.GLFW.GLFW_KEY_Y,
+                "test"
+        ));
 
-                    if (i==HUDEditorModule.keybind.getKey()) gui.enterHUDEditor();
-                    gui.handleKeyEvent(i);
-                }
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            while (keyBinding.wasPressed()) {
+                assert client.player != null;
+                client.player.sendMessage(new LiteralText("Enabled ClickGui!"), false);
+                mc.openScreen(ClickGui.INSTANCE);
             }
-        }
+        });
     }
 }
