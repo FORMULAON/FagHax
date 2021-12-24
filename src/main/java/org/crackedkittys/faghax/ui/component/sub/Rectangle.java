@@ -6,10 +6,7 @@ import org.crackedkittys.faghax.util.RenderUtil;
 public class Rectangle extends Component {
 
     @Override
-    public void render() {
-        super.render();
-
-        //RenderUtil.drawRect();
+    public void renderComponent() {
+        super.renderComponent();
     }
-
 }

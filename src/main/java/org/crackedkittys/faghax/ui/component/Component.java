@@ -5,11 +5,11 @@ public class Component {
     public void doStuff() {
     }
 
-    public void update() {
+    public void updateComponent() {
 
     }
 
-    public void render() {
+    public void renderComponent() {
 
     }
 }

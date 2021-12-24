@@ -7,6 +7,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import org.crackedkittys.faghax.ui.component.Component;
+import org.crackedkittys.faghax.ui.component.NewFrame;
 import org.crackedkittys.faghax.util.RenderUtil;
 
 public class ClickGui extends Screen {
@@ -35,5 +37,6 @@ public class ClickGui extends Screen {
         //this.drawTexture(matrices, 45, 40, 5,5, 40, 110);
         RenderUtil.drawRect(40, 40, 90, 200, 0x87b2d5, 0.35f);
 
+        //for (Component c : NewFrame.getC)
     }
 }
