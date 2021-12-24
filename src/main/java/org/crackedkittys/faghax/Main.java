@@ -19,7 +19,6 @@ import static org.lwjgl.glfw.GLFW.*;
 public class Main implements ModInitializer {
     public static KeyBinding keyBinding;
     protected static final MinecraftClient mc = MinecraftClient.getInstance();
-
    /* public void keyInput(){
         long window = MinecraftClient.getInstance().getWindow().getHandle();
 

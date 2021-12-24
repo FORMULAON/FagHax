@@ -7,6 +7,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import org.crackedkittys.faghax.util.RenderUtil;
 
 public class ClickGui extends Screen {
     public static ClickGui INSTANCE = new ClickGui(Text.of("ClickGui Screen"));
@@ -23,11 +24,16 @@ public class ClickGui extends Screen {
 
     @Override
     public boolean isPauseScreen() {
-        return true;
+        return false;
     }
 
     @Override
-    public void renderBackground(MatrixStack matrices) {
-        super.renderBackground(matrices);
+    public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
+        super.render(matrices, mouseX, mouseY, delta);
+        this.renderBackground(matrices);
+        this.textRenderer.drawWithShadow(matrices, "FagHax", 5, 5, 0xff00ff);
+        //this.drawTexture(matrices, 45, 40, 5,5, 40, 110);
+        RenderUtil.drawRect(40, 40, 90, 200, 0x87b2d5, 0.35f);
+
     }
 }
