@@ -13,6 +13,7 @@ import org.crackedkittys.faghax.util.RenderUtil;
 
 public class ClickGui extends Screen {
     public static ClickGui INSTANCE = new ClickGui(Text.of("ClickGui Screen"));
+    NewFrame nf = new NewFrame();
     protected ClickGui(Text title) {
         super(title);
     }
@@ -35,8 +36,9 @@ public class ClickGui extends Screen {
         this.renderBackground(matrices);
         this.textRenderer.drawWithShadow(matrices, "FagHax", 5, 5, 0xff00ff);
         //this.drawTexture(matrices, 45, 40, 5,5, 40, 110);
-        RenderUtil.drawRect(40, 40, 90, 200, 0x87b2d5, 0.35f);
 
-        //for (Component c : NewFrame.getC)
+        for (Component c : nf.getComponents()) {
+
+        }
     }
 }
