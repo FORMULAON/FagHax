@@ -1,5 +1,7 @@
 package org.crackedkittys.faghax.ui.component;
 
+import net.minecraft.client.util.math.MatrixStack;
+
 public class Component {
 
     public void doStuff() {
@@ -9,7 +11,7 @@ public class Component {
 
     }
 
-    public void renderComponent() {
+    public void renderComponent(MatrixStack matrices) {
 
     }
 }

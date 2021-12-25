@@ -1,6 +1,7 @@
 package org.crackedkittys.faghax.ui.component;
 
-import org.crackedkittys.faghax.ui.component.sub.LukesRect;
+import org.crackedkittys.faghax.ui.component.sub.PvpRect;
+import org.crackedkittys.faghax.ui.component.sub.Watermark;
 
 import java.util.ArrayList;
 
@@ -11,7 +12,8 @@ public class NewFrame {
     public NewFrame() {
         this.components = new ArrayList<>();
         // Component add
-        components.add(new LukesRect());
+        components.add(new PvpRect());
+        components.add(new Watermark());
     }
 
     public ArrayList<Component> getComponents() {

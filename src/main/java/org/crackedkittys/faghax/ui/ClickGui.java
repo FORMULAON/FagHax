@@ -31,10 +31,9 @@ public class ClickGui extends Screen {
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         super.render(matrices, mouseX, mouseY, delta);
         this.renderBackground(matrices);
-        this.textRenderer.drawWithShadow(matrices, "FagHax", 5, 5, 0xff00ff);
-        //this.drawTexture(matrices, 45, 40, 5,5, 40, 110);
 
         for (Component c : nf.getComponents()) {
+            c.renderComponent(matrices);
 
         }
     }

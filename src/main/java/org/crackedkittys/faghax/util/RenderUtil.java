@@ -25,4 +25,10 @@ public class RenderUtil {
         GlStateManager.enableTexture();
         GlStateManager.disableBlend();
     }
+
+    public static void drawString(float x, float y, int color, float alpha) {
+        final Tessellator tes = Tessellator.getInstance();
+
+        tes.draw();
+    }
 }

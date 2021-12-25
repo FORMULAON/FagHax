@@ -1,6 +1,7 @@
 package org.crackedkittys.faghax;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.client.MinecraftClient;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,7 @@ import static org.lwjgl.glfw.GLFW.*;
 public class Main implements ModInitializer {
 
     public static final Logger log = LogManager.getLogger("FagHax");
-    protected static final MinecraftClient mc = MinecraftClient.getInstance();
+    public static final MinecraftClient mc = MinecraftClient.getInstance();
     public ModuleManager modman = new ModuleManager();
     long window;
 
@@ -27,10 +28,6 @@ public class Main implements ModInitializer {
                 log.info("correct");
                 modRef.KeyAction();
                 modRef.onEnable();
-            } else {
-                log.info("no");
-                log.info("ACTION = " + key);
-                log.info(action);
             }
         });
     }
@@ -40,13 +37,15 @@ public class Main implements ModInitializer {
         ClickGuiModule click = new ClickGuiModule();
 
         ServerLifecycleEvents.SERVER_STARTED.register(client -> {
-            window = MinecraftClient.getInstance().getWindow().getHandle();
-            for (Module mod : modman.mods) {
-                keyInput(click);
-            }
 
             // Random dumb fucking key input function that probably won't even work.
             log.info("WOW FAGHAX IS GREAT");
+        });
+
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            window = MinecraftClient.getInstance().getWindow().getHandle();
+            keyInput(click);
+
         });
     }
 }
