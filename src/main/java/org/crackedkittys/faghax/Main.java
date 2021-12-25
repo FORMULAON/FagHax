@@ -51,7 +51,7 @@ public class Main implements ModInitializer {
             window = MinecraftClient.getInstance().getWindow().getHandle();
             keyInput();
         });
-
+//
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (keyBinding.wasPressed()) {
