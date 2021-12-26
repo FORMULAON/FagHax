@@ -1,9 +1,13 @@
 package org.crackedkittys.faghax.mod.client;
 
 import net.minecraft.client.gui.screen.ChatScreen;
+import net.minecraft.client.gui.screen.ingame.CraftingScreen;
+import net.minecraft.client.gui.screen.ingame.ShulkerBoxScreen;
+import org.crackedkittys.faghax.Main;
 import org.crackedkittys.faghax.mod.Category;
 import org.crackedkittys.faghax.mod.Module;
 import org.crackedkittys.faghax.ui.ClickGui;
+import org.crackedkittys.faghax.util.ScreenUtil;
 
 public class ClickGuiModule extends Module {
     public ClickGuiModule() {
@@ -12,16 +16,12 @@ public class ClickGuiModule extends Module {
     }
 
     public void onEnable() {
-        if (!(mc.player.getEntityWorld().equals(null))) {
-            if (!(mc.currentScreen instanceof ChatScreen)) {
-                if (!(mc.currentScreen instanceof ClickGui)) {
-                    mc.openScreen(ClickGui.INSTANCE);
-                    assert mc.player != null;
-                    mc.player.sendChatMessage("enabling clickgui");
-                } else {
-                    this.onDisable();
-                }
-            }
+        if (!(mc.currentScreen instanceof ClickGui) && (ScreenUtil.isValidScreen())) {
+            mc.openScreen(ClickGui.INSTANCE);
+            assert mc.player != null;
+            mc.player.sendChatMessage("enabling clickgui");
+        } else {
+            this.onDisable();
         }
     }
 

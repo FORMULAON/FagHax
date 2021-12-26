@@ -14,11 +14,11 @@ public class RenderUtil {
 
         final Tessellator tessellator = Tessellator.getInstance();
         final BufferBuilder bufferbuilder = tessellator.getBuffer();
-        final BufferBuilder bufferbuilder1 = tessellator.getBuffer();
 
         GlStateManager.enableBlend();
         GlStateManager.disableTexture();
         GlStateManager.blendFuncSeparate(770, 771, 1, 0);
+
 
         bufferbuilder.begin(7, VertexFormats.POSITION_COLOR);
         bufferbuilder.vertex((double) x, (double) h, 0.0D).color(red, green, blue, alpha).next();
@@ -26,8 +26,7 @@ public class RenderUtil {
         bufferbuilder.vertex((double) w, (double) y, 0.0D).color(red, green, blue, alpha).next();
         bufferbuilder.vertex((double) x, (double) y, 0.0D).color(red, green, blue, alpha).next();
 
-
-
+        /*
         alpha = 0.5f;
         bufferbuilder1.begin(7, VertexFormats.POSITION_COLOR);
         bufferbuilder1.vertex((double) x, (double) h, 0.0D).color(red, green, blue, alpha).next();
@@ -38,6 +37,7 @@ public class RenderUtil {
         bufferbuilder1.vertex((double) w-5, (double) h+5, 0.0D).color(red, green, blue, alpha).next();
         bufferbuilder1.vertex((double) w-5, (double) y-5, 0.0D).color(red, green, blue, alpha).next();
         bufferbuilder1.vertex((double) x+5, (double) y-5, 0.0D).color(red, green, blue, alpha);
+         */
 
         tessellator.draw();
         GlStateManager.enableTexture();
