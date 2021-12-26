@@ -7,10 +7,9 @@ import org.crackedkittys.faghax.ui.component.Component;
 import org.crackedkittys.faghax.util.RenderUtil;
 
 public class PvpRect extends Component {
-    TextRenderer tr = MinecraftClient.getInstance().textRenderer;
 
     @Override
-    public void renderComponent(MatrixStack matrices) {
+    public void renderComponent(MatrixStack matrices) { // Drawing rectangle
         RenderUtil.drawRect(40, 40, 90, 200, 0x87b2d5, 0.35f);
     }
 }

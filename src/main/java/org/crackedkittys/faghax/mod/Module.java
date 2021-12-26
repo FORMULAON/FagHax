@@ -1,7 +1,6 @@
 package org.crackedkittys.faghax.mod;
 
 import net.minecraft.client.MinecraftClient;
-import org.crackedkittys.faghax.Main;
 
 public class Module {
     private final String name;
@@ -9,20 +8,18 @@ public class Module {
     private final Category c;
     private int key;
     private boolean toggled;
+    private boolean toggleable;
 
     protected static final MinecraftClient mc = MinecraftClient.getInstance();
 
-    public Module(String name, String description, Category c) {
+    public Module(String name, String description, Category c, boolean toggleable) { // constructor for all modules to follow
         super();
         this.name = name;
         this.description = description;
         this.c = c;
+        this.toggleable = toggleable;
         this.key = 0;
         this.toggled = false;
-    }
-
-    public void KeyAction() {
-        Main.log.info("test");
     }
 
     public int getKey() {
@@ -42,16 +39,6 @@ public class Module {
 
     }
 
-    public void toggle()  {
-        this.toggled = !this.toggled;
-
-        if (this.toggled) {
-            this.onEnable();
-        } else {
-            this.onDisable();
-        }
-    }
-
     public void setToggled(boolean toggled) {
         this.toggled = toggled;
 
@@ -68,5 +55,9 @@ public class Module {
 
     public boolean getToggle() {
         return this.toggled;
+    }
+
+    public boolean isToggleable() {
+        return this.toggleable;
     }
 }

@@ -7,7 +7,7 @@ import org.lwjgl.glfw.GLFW;
 public class BedAura extends Module {
 
     public BedAura() {
-        super("Bed Aura!", "Does bed shit", Category.PVP);
+        super("Bed Aura!", "Does bed shit", Category.PVP, true);
 
     }
 }

@@ -15,7 +15,7 @@ public class Watermark extends Component {
     TextRenderer tr = MinecraftClient.getInstance().textRenderer;
 
     @Override
-    public void renderComponent(MatrixStack matrices) {
+    public void renderComponent(MatrixStack matrices) { // Drawing watermark
         tr.drawWithShadow(matrices, "FagHax", 3, 3, 0xff00ff);
     }
 }

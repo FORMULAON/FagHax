@@ -12,7 +12,7 @@ public class ModuleManager {
 
     public ArrayList<Module> mods;
 
-    public ModuleManager() {
+    public ModuleManager() { // Registering modules
         mods = new ArrayList<>();
         // COMBAT
         mods.add(new CrystalAura());

@@ -22,7 +22,7 @@ public class ClickGui extends Screen {
 
     @Override
     public boolean isPauseScreen() {
-        return false;
+        return true;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class ClickGui extends Screen {
         super.render(matrices, mouseX, mouseY, delta);
         this.renderBackground(matrices);
 
-        for (Component c : nf.getComponents()) {
+        for (Component c : nf.getComponents()) { // rendering all components
             c.renderComponent(matrices);
 
         }

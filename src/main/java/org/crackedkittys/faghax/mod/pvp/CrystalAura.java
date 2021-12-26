@@ -6,6 +6,6 @@ import org.lwjgl.glfw.GLFW;
 
 public class CrystalAura extends Module {
     public CrystalAura() {
-        super("Crystal Aura!", "Auto Destroys Crystals", Category.PVP);
+        super("Crystal Aura!", "Auto Destroys Crystals", Category.PVP, true);
     }
 }
