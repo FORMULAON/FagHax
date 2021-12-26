@@ -13,6 +13,12 @@ public class ClickGuiModule extends Module {
     public void onEnable() {
         mc.openScreen(ClickGui.INSTANCE);
         assert mc.player != null;
-        mc.player.sendChatMessage("test");
+        mc.player.sendChatMessage("enabling clickgui");
+    }
+
+    public void onDisable() {
+        ClickGui.INSTANCE.onClose();
+        assert mc.player != null;
+        mc.player.sendChatMessage("closing");
     }
 }

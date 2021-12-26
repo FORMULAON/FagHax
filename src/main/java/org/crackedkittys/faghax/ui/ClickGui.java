@@ -18,8 +18,6 @@ public class ClickGui extends Screen {
     @Override
     public void init(MinecraftClient client, int width, int height) {
         super.init(client, width, height);
-        assert client.player != null;
-        client.player.sendMessage(new LiteralText("From Init"), false);
     }
 
     @Override
@@ -36,5 +34,10 @@ public class ClickGui extends Screen {
             c.renderComponent(matrices);
 
         }
+    }
+
+    @Override
+    public void onClose() {
+        super.onClose();
     }
 }

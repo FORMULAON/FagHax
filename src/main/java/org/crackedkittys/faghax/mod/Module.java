@@ -8,6 +8,7 @@ public class Module {
     private final String description;
     private final Category c;
     private int key;
+    private boolean toggled;
 
     protected static final MinecraftClient mc = MinecraftClient.getInstance();
 
@@ -17,6 +18,7 @@ public class Module {
         this.description = description;
         this.c = c;
         this.key = 0;
+        this.toggled = false;
     }
 
     public void KeyAction() {
@@ -30,7 +32,41 @@ public class Module {
     public void onEnable() {
     }
 
+
+    public String getName() {
+        return this.name;
+    }
+
+
+    public void onDisable() {
+
+    }
+
+    public void toggle()  {
+        this.toggled = !this.toggled;
+
+        if (this.toggled) {
+            this.onEnable();
+        } else {
+            this.onDisable();
+        }
+    }
+
+    public void setToggled(boolean toggled) {
+        this.toggled = toggled;
+
+        if (this.toggled) {
+            this.onEnable();
+        } else {
+            this.onDisable();
+        }
+    }
+
     public void setKey(int key) {
         this.key = key;
+    }
+
+    public boolean getToggle() {
+        return this.toggled;
     }
 }

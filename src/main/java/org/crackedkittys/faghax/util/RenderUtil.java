@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.VertexFormats;
+import net.minecraft.util.math.Box;
 
 public class RenderUtil {
 
@@ -24,11 +25,5 @@ public class RenderUtil {
         tessellator.draw();
         GlStateManager.enableTexture();
         GlStateManager.disableBlend();
-    }
-
-    public static void drawString(float x, float y, int color, float alpha) {
-        final Tessellator tes = Tessellator.getInstance();
-
-        tes.draw();
     }
 }
