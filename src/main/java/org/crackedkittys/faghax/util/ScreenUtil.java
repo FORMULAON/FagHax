@@ -5,10 +5,6 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.CraftingScreen;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.ShulkerBoxScreen;
-import org.crackedkittys.faghax.Main;
-import org.crackedkittys.faghax.ui.ClickGui;
-
-import java.awt.event.WindowStateListener;
 
 import static org.crackedkittys.faghax.Main.mc;
 

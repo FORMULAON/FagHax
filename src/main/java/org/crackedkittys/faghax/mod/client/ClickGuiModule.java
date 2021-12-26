@@ -1,9 +1,5 @@
 package org.crackedkittys.faghax.mod.client;
 
-import net.minecraft.client.gui.screen.ChatScreen;
-import net.minecraft.client.gui.screen.ingame.CraftingScreen;
-import net.minecraft.client.gui.screen.ingame.ShulkerBoxScreen;
-import org.crackedkittys.faghax.Main;
 import org.crackedkittys.faghax.mod.Category;
 import org.crackedkittys.faghax.mod.Module;
 import org.crackedkittys.faghax.ui.ClickGui;
@@ -31,7 +27,9 @@ public class ClickGuiModule extends Module {
             assert mc.player != null;
             mc.player.sendChatMessage("closing");
         } else {
-            this.onEnable();
+            if (ScreenUtil.isValidScreen()) {
+                this.onEnable();
+            }
         }
     }
 }

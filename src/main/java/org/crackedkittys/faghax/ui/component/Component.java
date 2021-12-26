@@ -13,6 +13,7 @@ public class Component {
 
     public void renderComponent(MatrixStack matrices) {
 
+
     }
 
 }

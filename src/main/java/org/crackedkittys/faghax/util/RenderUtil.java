@@ -4,10 +4,12 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.VertexFormats;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL14;
 
 public class RenderUtil {
 
-    public static void drawRect(float x, float y, float w, float h, int color, float alpha) {
+    public static void drawRect(float x, float y, float w, float h, int color, float alpha) { // TODO rewrite
         float red = (float) (color >> 16 & 255) / 255.0F;
         float green = (float) (color >> 8 & 255) / 255.0F;
         float blue = (float) (color & 255) / 255.0F;
