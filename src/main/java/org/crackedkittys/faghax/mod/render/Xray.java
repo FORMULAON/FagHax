@@ -11,7 +11,7 @@ public class Xray extends Module {
     }
 
     @Override
-    public void onEnable() {
+    public void onEnable() {//
         assert mc.player != null;
     }
 }

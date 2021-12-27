@@ -12,7 +12,7 @@ public class ClickGuiModule extends Module {
         this.setKey(89);
     }
 
-    public void onEnable() {
+    public void onEnable() {//
         if (!(mc.currentScreen instanceof ClickGui) && (ScreenUtil.isValidScreen())) {
             mc.openScreen(ClickGui.INSTANCE);
             assert mc.player != null;

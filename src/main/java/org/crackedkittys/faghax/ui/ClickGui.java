@@ -18,7 +18,7 @@ public class ClickGui extends Screen {
     }
 
     @Override
-    public void init(MinecraftClient client, int width, int height) {
+    public void init(MinecraftClient client, int width, int height) {//
         super.init(client, width, height);
     }
 
@@ -30,7 +30,6 @@ public class ClickGui extends Screen {
 
         for (Component c : nf.getComponents()) { // rendering all components
             c.renderComponent(matrices);
-
         }
 
         matrices.pop();
