@@ -1,5 +1,6 @@
 package org.crackedkittys.faghax.mod.client;
 
+import net.minecraft.text.Text;
 import org.crackedkittys.faghax.mod.Category;
 import org.crackedkittys.faghax.mod.Module;
 import org.crackedkittys.faghax.ui.ClickGui;
@@ -15,7 +16,6 @@ public class ClickGuiModule extends Module {
         if (!(mc.currentScreen instanceof ClickGui) && (ScreenUtil.isValidScreen())) {
             mc.openScreen(ClickGui.INSTANCE);
             assert mc.player != null;
-            mc.player.sendChatMessage("enabling clickgui");
         } else {
             this.onDisable();
         }

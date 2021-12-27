@@ -13,6 +13,5 @@ public class Xray extends Module {
     @Override
     public void onEnable() {
         assert mc.player != null;
-        mc.player.sendChatMessage(this.getName());
     }
 }
