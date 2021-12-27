@@ -25,7 +25,7 @@ public class ClickGuiModule extends Module {
         if (mc.currentScreen instanceof ClickGui) {
             ClickGui.INSTANCE.onClose();
             assert mc.player != null;
-            mc.player.sendChatMessage("closing");
+
         } else {
             if (ScreenUtil.isValidScreen()) {
                 this.onEnable();
