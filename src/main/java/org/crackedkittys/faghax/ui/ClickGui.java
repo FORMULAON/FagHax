@@ -23,11 +23,6 @@ public class ClickGui extends Screen {
     }
 
     @Override
-    public boolean isPauseScreen() {
-        return true;
-    }
-
-    @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         super.render(matrices, mouseX, mouseY, delta);
         this.renderBackground(matrices);

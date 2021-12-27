@@ -13,8 +13,7 @@ public class ScreenUtil {
     private final Screen chat = null;
 
     public static boolean isValidScreen() { // Checking to make sure the clickgui screen is not interrupting something else.
-        assert mc.player != null;
-        return (mc.player.getEntityWorld() != null)
+        return (mc.player != null)
                 && !(mc.currentScreen instanceof ChatScreen)
                 && !(mc.currentScreen instanceof CraftingScreen)
                 && !(mc.currentScreen instanceof ShulkerBoxScreen)

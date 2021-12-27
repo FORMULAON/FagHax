@@ -14,6 +14,9 @@
   "entrypoints": {
     "main": [
       "org.crackedkittys.faghax.Main"
+    ],
+    "client": [
+      "org.crackedkittys.faghax.ClientMain"
     ]
   },
   "mixins": [

@@ -22,23 +22,14 @@ public class KeyboardUtil {
 
                 // Load all modules from the manager
                 for (Module mod : _ModManager.mods) {
-                    Main.log.info("Mod Registered: " + mod.getName());
-
                     if (key == mod.getKey() && action == GLFW_PRESS) {
-                        if(mod.isToggleable()) {
+                        if (mod.isToggleable()) {
                             mod.setToggled(!mod.getToggle());
                         } else {
                             mod.onEnable();
                         }
-
-                    } else {
-                        // Update states outside of hooked keys
-                        KeyBinding.updatePressedStates();
                     }
                 }
-
-                // Spit out that a key has been registered
-                Main.log.info("  - Mod Key Registered");
             }
         };
 
