@@ -1,9 +1,11 @@
 package org.crackedkittys.faghax.util;
 
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import org.crackedkittys.faghax.Main;
 import org.crackedkittys.faghax.mod.Module;
 import org.crackedkittys.faghax.mod.ModuleManager;
+import org.crackedkittys.faghax.ui.ClickGui;
 import org.lwjgl.glfw.GLFWKeyCallback;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -22,11 +24,13 @@ public class KeyboardUtil {
 
                 // Load all modules from the manager
                 for (Module mod : _ModManager.mods) {
-                    if (key == mod.getKey() && action == GLFW_PRESS && ScreenUtil.isValidScreen()) {
-                        if (mod.isToggleable()) {
-                            mod.setToggled(!mod.getToggle());
-                        } else {
-                            mod.onEnable();
+                    if (key == mod.getKey() && action == GLFW_PRESS) {
+                        if (ScreenUtil.isValidScreen() || MinecraftClient.getInstance().currentScreen instanceof ClickGui) {
+                            if (mod.isToggleable()) {
+                                mod.setToggled(!mod.getToggle());
+                            } else {
+                                mod.onEnable();
+                            }
                         }
                     }
                 }

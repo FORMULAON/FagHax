@@ -10,7 +10,6 @@ public class Component {
     }
 
     public void updateComponent() {
-
     }
 
     public void renderComponent(MatrixStack matrices) {

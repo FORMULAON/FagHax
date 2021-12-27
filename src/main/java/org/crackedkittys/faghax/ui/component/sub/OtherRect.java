@@ -8,6 +8,5 @@ public class OtherRect extends Component {
 
     @Override
     public void renderComponent(MatrixStack matrices) {
-        RenderUtil.drawRect(20, 54, 40, 40, 0xff00ff, 1.0f);
     }
 }

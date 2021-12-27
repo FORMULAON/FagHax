@@ -10,6 +10,7 @@ import net.minecraft.util.math.Matrix4f;
 import org.crackedkittys.faghax.Main;
 import org.crackedkittys.faghax.ui.ClickGui;
 import org.crackedkittys.faghax.ui.component.Component;
+import org.crackedkittys.faghax.ui.component.NewFrame;
 
 public class Watermark extends Component {
     TextRenderer tr = MinecraftClient.getInstance().textRenderer;
@@ -17,5 +18,6 @@ public class Watermark extends Component {
     @Override
     public void renderComponent(MatrixStack matrices) { // Drawing watermark
         tr.drawWithShadow(matrices, "FagHax", 3, 3, 0xff00ff);
+        matrices.push();
     }
 }
