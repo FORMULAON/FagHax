@@ -16,8 +16,7 @@ public class ClientMain implements ClientModInitializer {
     public void onInitializeClient()
     {
         AtomicBoolean hasInitialized = new AtomicBoolean(false);
-        ClientTickEvents.START_CLIENT_TICK.register(client ->
-                {
+        ClientTickEvents.START_CLIENT_TICK.register(client -> {
                     if(!hasInitialized.get()) {
                         hasInitialized.set(true);
                         // Get the minecraft window handler for later calls to glfw

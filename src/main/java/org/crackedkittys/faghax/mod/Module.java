@@ -10,7 +10,7 @@ public class Module {
     private int key;
     private boolean toggled;
     private boolean toggleable;
-    private boolean stat;
+    public boolean stat;
 
     protected static final MinecraftClient mc = MinecraftClient.getInstance();
 
@@ -29,7 +29,6 @@ public class Module {
     }
 
     public void onEnable() {
-        stat = true;
     }
 
 
