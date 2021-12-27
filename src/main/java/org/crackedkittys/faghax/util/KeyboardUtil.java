@@ -22,7 +22,7 @@ public class KeyboardUtil {
 
                 // Load all modules from the manager
                 for (Module mod : _ModManager.mods) {
-                    if (key == mod.getKey() && action == GLFW_PRESS) {
+                    if (key == mod.getKey() && action == GLFW_PRESS && ScreenUtil.isValidScreen()) {
                         if (mod.isToggleable()) {
                             mod.setToggled(!mod.getToggle());
                         } else {

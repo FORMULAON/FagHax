@@ -1,6 +1,7 @@
 package org.crackedkittys.faghax.mod;
 
 import net.minecraft.client.MinecraftClient;
+import org.crackedkittys.faghax.util.ScreenUtil;
 
 public class Module {
     private final String name;
@@ -9,6 +10,7 @@ public class Module {
     private int key;
     private boolean toggled;
     private boolean toggleable;
+    private boolean stat;
 
     protected static final MinecraftClient mc = MinecraftClient.getInstance();
 
@@ -27,6 +29,7 @@ public class Module {
     }
 
     public void onEnable() {
+        stat = true;
     }
 
 
@@ -36,6 +39,7 @@ public class Module {
 
 
     public void onDisable() {
+        stat = false;
 
     }
 
@@ -59,5 +63,9 @@ public class Module {
 
     public boolean isToggleable() {
         return this.toggleable;
+    }
+
+    public boolean isOn() {
+        return this.stat;
     }
 }
