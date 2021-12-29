@@ -30,8 +30,8 @@ public class ClientMain implements ClientModInitializer {
                         window = MinecraftClient.getInstance().getWindow().getHandle();
 
                         // Register HUD;
-                        mc.setOverlay(HUD.INSTANCE);
-                        mc.inGameHud.getFontRenderer().drawWithShadow();
+                        hud = new HUD();
+                        hud.register();
 
                         // Register KeyboardInput;
                         KeyboardUtil.KeyInputRegister(modMan, window);
