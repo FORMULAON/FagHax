@@ -15,7 +15,6 @@ public class NewFrame {
         // Component add
         components.add(new PvpRect());
         components.add(new Watermark());
-        components.add(new OtherRect());
     }
 
     public ArrayList<Component> getComponents() {

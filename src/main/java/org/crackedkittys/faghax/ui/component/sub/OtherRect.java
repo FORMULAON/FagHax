@@ -4,9 +4,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import org.crackedkittys.faghax.ui.component.Component;
 import org.crackedkittys.faghax.util.RenderUtil;
 
-public class OtherRect extends Component {
+public class OtherRect  {
 
-    @Override
     public void renderComponent(MatrixStack matrices) {
     }
 }

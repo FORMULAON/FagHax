@@ -10,6 +10,8 @@ import org.crackedkittys.faghax.ui.component.Component;
 import org.crackedkittys.faghax.ui.component.NewFrame;
 import org.crackedkittys.faghax.util.RenderUtil;
 
+import static org.crackedkittys.faghax.Main.mc;
+
 public class ClickGui extends Screen {
     public static ClickGui INSTANCE = new ClickGui(Text.of("ClickGui Screen"));
     NewFrame nf = new NewFrame();
@@ -23,15 +25,23 @@ public class ClickGui extends Screen {
     }
 
     @Override
+    public boolean isPauseScreen() {
+        return false;
+    }
+
+    @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         super.render(matrices, mouseX, mouseY, delta);
         this.renderBackground(matrices);
         RenderUtil.drawRect(20, 20, 20, 20, 0xff00ff, 0.5f);
+        this.fillGradient(matrices, 90, 90, 10, 10, 0xff00ff, 0xff00ff);
 
         for (Component c : nf.getComponents()) { // rendering all components
             c.renderComponent(matrices);
+            if (isMouseOver(mouseX, mouseY)) {
+                mc.player.sendMessage(Text.of("You are over component"), false);
+            }
         }
-        this.drawVerticalLine(matrices, 90, 10, 15, 0xff00ff);
 
         matrices.pop();
     }
