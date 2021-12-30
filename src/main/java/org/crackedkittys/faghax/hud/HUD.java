@@ -36,9 +36,9 @@ public class HUD {
             tr.drawWithShadow(new MatrixStack(), "FagHax v0.0.1", 3.0f, 3.0f, 0xff00ff);
             float y = 3.0f;
 
-            for (Module m : modMan.mods ) {
+            for (Module m : modMan.getMods()) {
                 if (m.getToggle()) {
-                    tr.drawWithShadow(new MatrixStack(), m.getName(), w - 60.0f, y, 0xff0000);
+                    tr.drawWithShadow(new MatrixStack(), m.getName(), w - 65.0f, y, 0xffffff);
                     //TODO somehow figure out how to align this stuff better.
                     y += 10;
                 }

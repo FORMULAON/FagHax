@@ -28,4 +28,8 @@ public class ModuleManager {
         // MOVEMENT
         mods.add(new AutoSprint());
     }
+
+    public ArrayList<Module> getMods() {
+        return mods;
+    }
 }
