@@ -36,8 +36,6 @@ public class ClickGui extends Screen {
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         super.render(matrices, mouseX, mouseY, delta);
         this.renderBackground(matrices);
-        RenderUtil.drawRect(20, 20, 20, 20, 0xff00ff, 0.5f);
-        this.fillGradient(matrices, 90, 90, 10, 10, 0xff00ff, 0xff00ff);
 
         for (Component c : nf.getComponents()) { // rendering all components
             c.renderComponent(matrices);

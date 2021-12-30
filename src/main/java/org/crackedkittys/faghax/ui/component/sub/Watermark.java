@@ -15,9 +15,6 @@ import org.crackedkittys.faghax.ui.component.NewFrame;
 public class Watermark extends Component {
     TextRenderer tr = MinecraftClient.getInstance().textRenderer;
 
-    public Watermark() {
-        super(3.0, 3.0);
-    }
 
     @Override
     public void renderComponent(MatrixStack matrices) { // Drawing watermark
