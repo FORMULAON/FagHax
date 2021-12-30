@@ -5,6 +5,7 @@ import net.minecraft.client.option.KeyBinding;
 import org.crackedkittys.faghax.Main;
 import org.crackedkittys.faghax.mod.Module;
 import org.crackedkittys.faghax.mod.ModuleManager;
+import org.crackedkittys.faghax.mod.client.ClickGuiModule;
 import org.crackedkittys.faghax.ui.ClickGui;
 import org.lwjgl.glfw.GLFWKeyCallback;
 

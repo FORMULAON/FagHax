@@ -7,6 +7,7 @@ import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.gui.screen.Overlay;
 import org.crackedkittys.faghax.hud.HUD;
 import org.crackedkittys.faghax.mod.ModuleManager;
+import org.crackedkittys.faghax.ui.ClickGui;
 import org.crackedkittys.faghax.util.KeyboardUtil;
 import org.crackedkittys.faghax.util.ScreenUtil;
 
@@ -31,7 +32,7 @@ public class ClientMain implements ClientModInitializer {
 
                         // Register HUD;
                         hud = new HUD();
-                        hud.register();
+                        hud.register(modMan);
 
                         // Register KeyboardInput;
                         KeyboardUtil.KeyInputRegister(modMan, window);

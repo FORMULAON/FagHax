@@ -38,8 +38,6 @@ public class Module {
 
 
     public void onDisable() {
-        stat = false;
-
     }
 
     public void setToggled(boolean toggled) {
