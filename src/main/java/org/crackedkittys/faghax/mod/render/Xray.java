@@ -6,7 +6,7 @@ import org.lwjgl.glfw.GLFW;
 
 public class Xray extends Module {
     public Xray() {
-        super("Xray!", "Shows some goods!", Category.RENDER, false);
+        super("Xray!", "Shows some goods!", Category.RENDER, true);
         this.setKey(GLFW.GLFW_KEY_X);
     }
 

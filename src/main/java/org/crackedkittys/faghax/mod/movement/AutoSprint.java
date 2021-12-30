@@ -10,7 +10,7 @@ public class AutoSprint extends Module {
 
     public AutoSprint() {
         super("Auto Sprint!", "Makes you go speedy", Category.MOVEMENT, true);
-        this.setKey(GLFW.GLFW_KEY_B);
+        this.setKey(GLFW.GLFW_KEY_V);
     }
 
     public void onEnable() {

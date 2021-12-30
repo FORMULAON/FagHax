@@ -8,6 +8,8 @@ import net.minecraft.client.util.math.MatrixStack;
 import org.crackedkittys.faghax.mod.Module;
 import org.crackedkittys.faghax.mod.ModuleManager;
 
+import static org.crackedkittys.faghax.Main.mc;
+
 public class HUD {
     /*public static HUD INSTANCE = new HUD();
 
@@ -27,13 +29,17 @@ public class HUD {
     public void register(ModuleManager modMan) {
         HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
             TextRenderer tr = MinecraftClient.getInstance().textRenderer;
+            float h = mc.getWindow().getHeight();
+            float w = mc.getWindow().getScaledWidth();
 
-            tr.drawWithShadow(new MatrixStack(), "FagHax\r\n v0.0.1", 3.0f, 3.0f, 0xff00ff);
+
+            tr.drawWithShadow(new MatrixStack(), "FagHax v0.0.1", 3.0f, 3.0f, 0xff00ff);
             float y = 3.0f;
 
             for (Module m : modMan.mods ) {
                 if (m.getToggle()) {
-                    tr.drawWithShadow(new MatrixStack(), m.getName(), 350.0f, y, 0xff0000);
+                    tr.drawWithShadow(new MatrixStack(), m.getName(), w - 60.0f, y, 0xff0000);
+                    //TODO somehow figure out how to align this stuff better.
                     y += 10;
                 }
             }

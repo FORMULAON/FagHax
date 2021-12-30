@@ -8,6 +8,7 @@ public class BedAura extends Module {
 
     public BedAura() {
         super("Bed Aura!", "Does bed shit", Category.PVP, true);
+        this.setKey(GLFW.GLFW_KEY_B);
 
     }
 }

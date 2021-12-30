@@ -7,5 +7,6 @@ import org.lwjgl.glfw.GLFW;
 public class CrystalAura extends Module {
     public CrystalAura() {
         super("Crystal Aura!", "Auto Destroys Crystals", Category.PVP, true);
+        this.setKey(GLFW.GLFW_KEY_C);
     }
 }
