@@ -17,6 +17,7 @@ public class NewFrame {
         components.add(new Rect(40, 40, 40, 130, 0x00ffff, 0.35f));
         RenderUtil.drawOutline((Rect) getComponents().get(0), this.components, 1.5f, 0x0);
         components.add(new Watermark());
+
     }
 
     public ArrayList<Component> getComponents() {

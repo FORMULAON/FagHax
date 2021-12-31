@@ -10,6 +10,7 @@
   ],
   "contact": {},
   "license": "MIT",
+  "icon": "logo/FagHax.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -21,10 +22,5 @@
   },
   "mixins": [
     "FagHax.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": ">=0.12.12",
-    "fabric": "*",
-    "minecraft": "1.16.5"
-  }
+  ]
 }

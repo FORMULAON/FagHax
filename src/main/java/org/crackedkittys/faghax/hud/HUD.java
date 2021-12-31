@@ -4,7 +4,12 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.resource.ResourceIndex;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.resource.Resource;
+import net.minecraft.resource.ResourceManager;
+import net.minecraft.text.Text;
+import org.crackedkittys.faghax.Main;
 import org.crackedkittys.faghax.mod.Module;
 import org.crackedkittys.faghax.mod.ModuleManager;
 
@@ -29,13 +34,18 @@ public class HUD {
     public void register(ModuleManager modMan) {
         HudRenderCallback.EVENT.register((matrixStack, tickDelta) -> {
             TextRenderer tr = MinecraftClient.getInstance().textRenderer;
-            float h = mc.getWindow().getHeight();
+
+            float h = mc.getWindow().getScaledHeight();
             float w = mc.getWindow().getScaledWidth();
 
-
+            // Drawing FagHax String
             tr.drawWithShadow(new MatrixStack(), "FagHax v0.0.1", 3.0f, 3.0f, 0xff00ff);
             float y = 3.0f;
 
+            // Drawing Coordinates
+            tr.drawWithShadow(new MatrixStack(), formatLocation(), 3.0f, h - 10.5f, 0xff00ff);
+
+            // Drawing mod arraylist
             for (Module m : modMan.getMods()) {
                 if (m.getToggle()) {
                     tr.drawWithShadow(new MatrixStack(), m.getName(), w - 65.0f, y, 0xffffff);
@@ -44,5 +54,17 @@ public class HUD {
                 }
             }
         });
+    }
+
+    // Formatting coordinates so that it looks good.
+    private String formatLocation() {
+        double x = MinecraftClient.getInstance().player.getX();
+        double y = MinecraftClient.getInstance().player.getY();
+        double z = MinecraftClient.getInstance().player.getZ();
+
+        x = Math.round((x * 100.0d) / 100.0d);
+        y = Math.round((y * 100.0d) / 100.0d);
+        z = Math.round((z * 100.0d) / 100.0d);
+        return "(" + x + ", " + y + ", " + z + ")";
     }
 }
