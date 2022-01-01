@@ -11,6 +11,9 @@ public class Rect extends Component {
     public float h;
     public int color;
     public float alpha;
+    private int mouseX;
+    private int mouseY;
+    private ComponentInterface cI;
 
 
     public Rect(float x, float y, float w, float h, int color, float alpha) {
@@ -28,5 +31,19 @@ public class Rect extends Component {
     public void renderComponent(MatrixStack matrices) { // Drawing rectangle
         RenderUtil.drawRect(x, y, w, h, color, alpha);
         matrices.push();
+    }
+
+    public void onClickEvent(ComponentInterface componentInterface) {
+        cI = componentInterface;
+    }
+
+    public void setMousePos(int mouseX, int mouseY) {
+        this.mouseX = mouseX;
+        this.mouseY = mouseY;
+
+        if (mouseX >= x && mouseX <= w + x && mouseY >= y && mouseY <= h + y) {
+            cI.callBack();
+
+        }
     }
 }

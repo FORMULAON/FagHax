@@ -62,9 +62,10 @@ public class HUD {
         double y = MinecraftClient.getInstance().player.getY();
         double z = MinecraftClient.getInstance().player.getZ();
 
-        x = Math.round((x * 100.0d) / 100.0d);
-        y = Math.round((y * 100.0d) / 100.0d);
-        z = Math.round((z * 100.0d) / 100.0d);
-        return "(" + x + ", " + y + ", " + z + ")";
+        int xI = (int) x;
+        int yI = (int) y;
+        int zI = (int) z;
+
+        return "(" + xI + ", " + yI + ", " + zI + ")";
     }
 }

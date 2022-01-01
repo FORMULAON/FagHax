@@ -35,6 +35,14 @@ public class KeyboardUtil {
                         }
                     }
                 }
+
+                if ((key == GLFW_MOUSE_BUTTON_1) && (MinecraftClient.getInstance().currentScreen instanceof ClickGui) && (action == GLFW_PRESS)) {
+                        _ModManager.isMouseClicked = true;
+
+                } else if ((key == GLFW_MOUSE_BUTTON_1) && (MinecraftClient.getInstance().currentScreen instanceof ClickGui) && (action == GLFW_RELEASE)) {
+                    _ModManager.isMouseClicked = false;
+
+                }
             }
         };
 

@@ -11,6 +11,7 @@ import org.crackedkittys.faghax.mod.render.Xray;
 import java.util.ArrayList;
 
 public class ModuleManager {
+    public boolean isMouseClicked;
 
     public ArrayList<Module> mods;
 
@@ -32,4 +33,6 @@ public class ModuleManager {
     public ArrayList<Module> getMods() {
         return mods;
     }
+
+
 }
