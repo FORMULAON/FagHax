@@ -1,5 +1,6 @@
 package org.crackedkittys.faghax.mod.render;
 
+import net.minecraft.client.render.WorldRenderer;
 import org.crackedkittys.faghax.mod.Category;
 import org.crackedkittys.faghax.mod.Module;
 import org.lwjgl.glfw.GLFW;
@@ -13,5 +14,9 @@ public class Xray extends Module {
     @Override
     public void onEnable() {//
         assert mc.player != null;
+    }
+
+
+    public void Render() {
     }
 }

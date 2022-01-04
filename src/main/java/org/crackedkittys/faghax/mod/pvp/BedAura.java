@@ -32,27 +32,27 @@ public class BedAura extends Module {
     }
 
     public void bedSleep() {
-           UseItemCallback.EVENT.register((player, world, hand) -> {
-               ItemStack i = new ItemStack(Items.RED_BED);
-               mc.player.sendMessage(Text.of("using item"), false);
+//           UseItemCallback.EVENT.register((player, world, hand) -> {
+//               ItemStack i = new ItemStack(Items.RED_BED);
+//               mc.player.sendMessage(Text.of("using item"), false);
+//
+//                if (world.getRegistryKey() == World.NETHER) {
+//                    if (player.getActiveItem().isItemEqual(i)) {
+//                        if (player.isUsingItem()) {
+//                            mc.player.sendMessage(Text.of("can do somethin bud"), false);
+//                        }
+//                    } else {
+//                        mc.player.sendMessage(Text.of("not working"), false);
+//                    }
+//                } else {
+//                    mc.player.sendMessage(Text.of("You have to be in nether"), false);
+//                }
+//
+//               return TypedActionResult.pass(i);
+//           });
 
-                if (world.getRegistryKey() == World.NETHER) {
-                    if (player.getActiveItem().isItemEqual(i)) {
-                        if (player.isUsingItem()) {
-                            mc.player.sendMessage(Text.of("can do somethin bud"), false);
-                        }
-                    } else {
-                        mc.player.sendMessage(Text.of("not working"), false);
-                    }
-                } else {
-                    mc.player.sendMessage(Text.of("You have to be in nether"), false);
-                }
-
-               return TypedActionResult.pass(i);
+           BlockConstructedCallback.EVENT.register((block, world)-> {
+               mc.player.sendMessage(Text.of("Block placed"), false);
            });
-
-           
-
-
     }
 }
