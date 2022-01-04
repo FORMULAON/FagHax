@@ -2,6 +2,7 @@ package org.crackedkittys.faghax.mod;
 
 import org.crackedkittys.faghax.mod.client.ClickGuiModule;
 import org.crackedkittys.faghax.mod.client.HudModule;
+import org.crackedkittys.faghax.mod.misc.Suffix;
 import org.crackedkittys.faghax.mod.movement.AutoSprint;
 import org.crackedkittys.faghax.mod.pvp.BedAura;
 import org.crackedkittys.faghax.mod.pvp.CrystalAura;
@@ -28,6 +29,8 @@ public class ModuleManager {
         mods.add(new Xray());
         // MOVEMENT
         mods.add(new AutoSprint());
+        // MISC
+        mods.add(new Suffix());
     }
 
     public ArrayList<Module> getMods() {
